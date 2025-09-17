@@ -44,15 +44,13 @@ Has a few new members such as owning its own Journal (Log) where some informatio
 Residents are the people working at the hopsital, they share common traits with Person class and inherits some of them with additional members of Shift (what time they work) and "Profession" for their role.
 Some other job-related functions like ClockIn and ClockOut have been added for when workers head in and out of work. This class is abstract because it will already have new classes based on it.
 
-###Nurse
+### Nurse
 Nurse has the added membebers of TeamMates (what group of nurses the ywork with) and Assigned Doctor (their main doctor to support). Most of their methods refer to either the patient or the doctor. They
 can assist their doctor, look at patient records, change records, be teamed up with new nurses and of course they inherit the ClockIn and ClockOut through polymorphism.
 
-###Doctor 
+### Doctor 
 Also a derived class from the Resident class. The doctor has modified ClockIn and CLockOut as the Nurse but it also has it overy own attributes and functions. It has a patient list, a status variable depending
 on if they are busy or available, they have the ability to RequestTransfers of patients to new Wards, make diagnosises, and prescribe medicine to the patient.
 
-##Jorunal
+## Journal
 A class containing miscellaneous infromation keep from earlier visits and the overall diagnosis for the patietn. IT also stores string logs i na log book that can be browsed.
-
-Do
