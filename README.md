@@ -12,11 +12,10 @@ The classes involve:
   Ward
      
   Person ______ Patients ---- Journal 
-          \____ Residents Log ______ Nurse
-                          \_________Doctor
+  
+  Person ____ Residents ______ Nurse / Doctor
 
-Relationship:
-               >>>>>>>>>>>>>>>
+## Relationships:
 ---------------------------------------------------
    HOPSITAL  |   COMPOSITION   |   WARD/PERSON
 ---------------------------------------------------
@@ -27,29 +26,29 @@ Relationship:
    PATIENT   |   AGGREGATION   |    JOURNAL     
 ---------------------------------------------------
 
-## Hopsital
+# Hopsital
 The class in question is going to be a class that contains information on the hospital itself, when the other some of the later classes uses the Hopsital objects in their own parameters when instantiated.
 This also has a few methods like Close and Open the hopsital.
 
 ## Ward
 Ward is just class that creates Ward objects, they are declared with WardNumber and WardName at initation but I also made it so that the there is a static list of WardNames to choose form it Ward[] array.
 
-### Person
+## Person
 Abstract base class for Patient And Residents, store basic people traits taht will be used in the hospital such as ID, Name, what Ward they belong, I didn't include any methods here. It is an abstract class
 since it will never be called by itself.
 
-#### Patient
+### Patient
 Has a few new members such as owning its own Journal (Log) where some information will be stored but also a mehtod to display its own inherit members and the Log contents.
                        
-### Resident
+## Resident
 Residents are the people working at the hopsital, they share common traits with Person class and inherits some of them with additional members of Shift (what time they work) and "Profession" for their role.
 Some other job-related functions like ClockIn and ClockOut have been added for when workers head in and out of work. This class is abstract because it will already have new classes based on it.
 
-####Nurse
+###Nurse
 Nurse has the added membebers of TeamMates (what group of nurses the ywork with) and Assigned Doctor (their main doctor to support). Most of their methods refer to either the patient or the doctor. They
 can assist their doctor, look at patient records, change records, be teamed up with new nurses and of course they inherit the ClockIn and ClockOut through polymorphism.
 
-####Doctor 
+###Doctor 
 Also a derived class from the Resident class. The doctor has modified ClockIn and CLockOut as the Nurse but it also has it overy own attributes and functions. It has a patient list, a status variable depending
 on if they are busy or available, they have the ability to RequestTransfers of patients to new Wards, make diagnosises, and prescribe medicine to the patient.
 
